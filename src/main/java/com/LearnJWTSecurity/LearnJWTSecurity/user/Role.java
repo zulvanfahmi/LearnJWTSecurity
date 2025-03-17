@@ -1,5 +1,10 @@
 package com.LearnJWTSecurity.LearnJWTSecurity.user;
 
-public enum Role {
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
+public enum Role {
+  USER,
+  ADMIN,
+  MANAGER,
 }

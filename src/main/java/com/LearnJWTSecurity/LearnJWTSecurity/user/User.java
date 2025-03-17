@@ -19,7 +19,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data 
+@Data
 // @Data syntax package lombok yg digunakan untuk membuat getter setter toString hashCode
 @Builder
 // @Builder -> Mengaktifkan Builder Pattern, yang memungkinkan pembuatan objek menggunakan metode yang lebih fleksibel dibanding constructor.
@@ -49,6 +49,7 @@ public class User implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
     }
+    
     @Override
     public String getUsername() {
         return email;
@@ -66,7 +67,7 @@ public class User implements UserDetails {
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
